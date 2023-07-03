@@ -32,7 +32,7 @@ const Blog = ({ blog, user, updateBlog, removeBlog }) => {
     }
 
     return (
-        <div style={blogStyle}>
+        <div className='blog' style={blogStyle}>
             <div onClick={toggleExtended} style={{ cursor: 'pointer' }}>
                 <h4>{blog.title}</h4>
             </div>
@@ -45,14 +45,14 @@ const Blog = ({ blog, user, updateBlog, removeBlog }) => {
                         url: <a href={blog.url}>{blog.url}</a>
                     </li>
                     <li>
-                        likes: {blog.likes} <button name='like' onClick={handleLike}>like</button>
+                        likes: {blog.likes} <button className='likeButton' name='like' onClick={handleLike}>like</button>
                     </li>
                     <li>
                         added by: {blog.user.name}
                     </li>
                     {user.username === blog.user.username &&
                     <li>
-                        <button name='delete' onClick={handleRemove}>delete</button>
+                        <button className='deleteButton' name='delete' onClick={handleRemove}>delete</button>
                     </li>
                     }
                 </ul>
